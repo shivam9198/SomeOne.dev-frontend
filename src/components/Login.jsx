@@ -11,6 +11,7 @@ const dispatch =   useDispatch(); // now we are dispatching the login action
 const navigate = useNavigate();
 const [email, setemail] = useState("shivamkashyap9198@gmail.com");
 const [password, setpassword] = useState("Alex@9198");
+const [errormessage, seterrormessage] = useState("")
 
 
 const handleSubmit = async()=>{
@@ -22,12 +23,10 @@ const handleSubmit = async()=>{
  dispatch(addUser(res.data)); // now we are dispatching the login action
    // now we are navigating to the home page after successful login
  return navigate("/");
-
-  
-  }
-  
+}
    catch (error) {
-    console.log(error);
+  seterrormessage(error.response.data ||"Something went wrong!");
+  
   }
 }
 
@@ -54,8 +53,9 @@ const handleSubmit = async()=>{
   value={password} onChange={(e)=>setpassword(e.target.value)}
   placeholder="Type here" className="input input-bordered w-full max-w-xs" />
 </label>
+<p className='text-red-500 text-sm'>{errormessage} </p>
       <div className="card-actions justify-end flex justify-center mt-5">
-        <button className="btn btn-primary" onClick={handleSubmit}>Submit</button>
+        <button className="btn btn-primary" onClick={handleSubmit}>Login</button>
       </div>
     </div>
   </div>

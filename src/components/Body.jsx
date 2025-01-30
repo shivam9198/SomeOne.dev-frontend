@@ -9,10 +9,10 @@ import { addUser } from '../utils/UserSlice'
 function Body() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const userData  = useSelector((store)=>store.user);
+  const userData  = useSelector((store)=>store.user); //yha pe ye cheak krega ki userdata useslice me h ya nhi kyuki refersh hone me redux reset hota h
 
     const fetchUser =  async()=>{
-      if(userData) return; // if user is already present then no need to fetch the user again
+      if(userData) return; // if user data  is already present in the store userSlice then no need to fetch the user again
 
       try {
         const res = await axios.get(baseUrl+ "/profile",{
