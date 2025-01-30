@@ -3,7 +3,7 @@ import userReducer from "./UserSlice";
 
 
 const appStore = configureStore({
-    reducer : {
+    reducer : { // this is a big reducer of the store which consist of small small reduces of each slices
                user :  userReducer,
     }
 });

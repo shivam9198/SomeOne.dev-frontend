@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import baseUrl from '../utils/BaseUrl';
 
 function Login() {
-const dispatch =   useDispatch();
+const dispatch =   useDispatch(); // now we are dispatching the login action
 const navigate = useNavigate();
 const [email, setemail] = useState("shivamkashyap9198@gmail.com");
 const [password, setpassword] = useState("Alex@9198");
@@ -19,8 +19,8 @@ const handleSubmit = async()=>{
       email,password},
   {withCredentials:true},
 );
- dispatch(addUser(res.data));
- console.log(res.data);
+ dispatch(addUser(res.data)); // now we are dispatching the login action
+   // now we are navigating to the home page after successful login
  return navigate("/");
 
   
