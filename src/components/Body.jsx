@@ -13,7 +13,7 @@ function Body() {
 
     const fetchUser =  async()=>{
       if(userData) return; // if user data  is already present in the store userSlice then no need to fetch the user again
-
+   
       try {
         const res = await axios.get(baseUrl+ "/profile",{
           withCredentials: true,

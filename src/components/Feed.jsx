@@ -8,7 +8,7 @@ import Card from './Card';
 function Feed() {
   const dispatch = useDispatch(); 
    const userFeed = useSelector((store)=>store.feed);
-   console.log(userFeed); // this will print the user feed data from the store if it exists, else it will be undefined.
+  // this will print the user feed data from the store if it exists, else it will be undefined.
   
     const fetchFeed = async()=>{
       if(userFeed!==null) return;
