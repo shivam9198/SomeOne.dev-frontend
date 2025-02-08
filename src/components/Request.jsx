@@ -30,16 +30,16 @@ const reviewRequest = (state,_id)=>{
   },[])
   if(!requestRecived) return;
   if (requestRecived.length === 0)
-    return <h1 className="font-bold text-3xl text-center my-10"> No Requests Found</h1>;
+    return <h1 className="font-bold text-3xl text-center my-10 pt-20"> No Requests Found</h1>;
 
   return (
-    <div className='w-full h-screen flex-col justify-items-center overflow-hidden '>
-    <h1 className='font-bold text-3xl text-center underline mb-12'> Friend Request</h1>
+    <div className='w-full h-screen flex-col justify-items-center overflow-hidden pt-20   overflow-y-auto '>
+    <h1 className='font-bold text-3xl text-center underline mb-12 '> Friend Request</h1>
     
     {requestRecived.map((request)=>{
         const{firstName ,lastName, age, gender,bio, _id, profilePic }= request.fromuserId;
         return(
-          <div key={_id} className='w-1/2 h-25 bg-base-300 m-5 rounded-2xl  flex items-center justify-between object-cover'>
+          <div key={_id} className='w-1/2 h-25 bg-base-300 m-5 rounded-2xl  flex items-center justify-between  mb-5 '>
               
               <div className="flex items-center gap-x-8">
              <img className="w-20 h-20 rounded-full object-cover overflow-hidden" src={profilePic} alt="Profile" />
@@ -50,7 +50,7 @@ const reviewRequest = (state,_id)=>{
               </div>
               </div>
               <div>
-              <button className="btn btn-secondary mx-3" onClick={()=>reviewRequest("accepted",request._id)}>Accepet</button>
+              <button className="btn btn-secondary mx-3" onClick={()=>reviewRequest("accepted",request._id)}>Accept</button>
              <button className="btn btn-primary mx-3 " onClick={()=>reviewRequest("rejected",request._id)}>Reject</button>
              </div>
               

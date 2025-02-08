@@ -55,7 +55,7 @@ const removeSkill = (skillToRemove) => {
 };
 
   return (
-    <div className=' w-full  max-h-[100vh] flex justify-center justify-around '>
+    <div className=' w-full  max-h-[100vh] flex justify-center justify-around pt-20 '>
     <div className="card bg-base-300 w-38  overflow-y-auto shadow-xl o"> 
     <div className="card-body mx-h-40  overflow-y-auto">
       <h2 className="card-title flex justify-center font-semibold my-">Profile Edit</h2>
@@ -135,7 +135,7 @@ const removeSkill = (skillToRemove) => {
     </div>
   ))}
 </div>
-<label className="form-control">
+ <label className="form-control">
   <div className="label">
     <span className="label-text">Your bio</span>
   </div>

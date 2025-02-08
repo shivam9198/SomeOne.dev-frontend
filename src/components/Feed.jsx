@@ -35,10 +35,10 @@ useEffect(()=>{
 if (!userFeed) return;
 
   if (userFeed.length <= 0)
-    return <h1 className="font-bold text-3xl text-center my-10">No new users found!</h1>;
+    return <h1 className="font-bold text-3xl text-center my-10 pt-20 ">No new users found!</h1>;
 
   return (
-     userFeed  &&  (<div className='flex justify-center'><Card user ={userFeed[0]}/>
+     userFeed  &&  (<div className='flex justify-center p-20'><Card user ={userFeed[0]}/>
     </div>
     )
    

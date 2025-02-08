@@ -38,7 +38,7 @@ function Body() {
 
   return (
    <>
-   <Navbar/>
+ <Navbar/>
    <Outlet/>
 
    </>

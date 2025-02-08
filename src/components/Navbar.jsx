@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import baseUrl from '../utils/BaseUrl';
 import { removeUser } from '../utils/UserSlice';
+import logo from "../assest/logo.png";
 
 
 function Navbar() {
@@ -23,8 +24,9 @@ const handleLogout = async()=>{
 }
 
   return (
-    <div className="navbar bg-base-300 mb-5 ">
+    <div className="navbar fixed top-0 left-0 w-full h-16 bg-base-300 z-50">
     <div className="flex-1">
+    <img src={logo} alt="logo" className="h-10 w-10 mr-2" />
       <Link to ="/" className="btn btn-ghost text-xl">SomeOne.DEV</Link>
     </div>
     {user && (

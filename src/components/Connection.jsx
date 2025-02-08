@@ -24,7 +24,7 @@ useEffect(()=>{
 },[])
 if(!userConnections) return;
   return (
-  <div className='w-full h-screen flex-col justify-items-center overflow-hidden '>
+  <div className='w-full h-screen flex-col justify-items-center overflow-hidden pt-20 '>
 <h1 className='font-bold text-3xl text-center underline mb-8'> My Connections</h1>
 
 {userConnections.map((connection)=>{
