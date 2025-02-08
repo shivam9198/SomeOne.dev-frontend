@@ -11,7 +11,6 @@ function Connection() {
         if(userConnections!==null) return;
      try {
            const res =  await axios.get(baseUrl+"/user/connections",{withCredentials:true});
-           console.log(res.data.data)
            dispatch((addConnection(res.data.data)))
         } catch (error) {
             console.log(error);

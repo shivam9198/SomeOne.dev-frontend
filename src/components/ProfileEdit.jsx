@@ -55,9 +55,9 @@ const removeSkill = (skillToRemove) => {
 };
 
   return (
-    <div className=' w-full h-screen flex justify-center justify-around '>
-    <div className="card bg-base-300 w-[38%] h-[100%] overflow-y-auto shadow-xl o"> 
-    <div className="card-body">
+    <div className=' w-full  max-h-[100vh] flex justify-center justify-around '>
+    <div className="card bg-base-300 w-38  overflow-y-auto shadow-xl o"> 
+    <div className="card-body mx-h-40  overflow-y-auto">
       <h2 className="card-title flex justify-center font-semibold my-">Profile Edit</h2>
       <div className='flex gap-5'>
       <label className="form-control w-full max-w-xs">
@@ -141,7 +141,14 @@ const removeSkill = (skillToRemove) => {
   </div>
   <textarea className="textarea textarea-bordered h-24" placeholder="Bio"
   value={bio}
-  onChange={(e) => setbio(e.target.value)}></textarea>
+  onChange={(e) => {
+    if (e.target.value.length <= 100) {
+      setbio(e.target.value);
+    }
+  }}
+></textarea>
+<p className="text-gray-500">{bio.length}/100 characters</p>
+{bio.length >= 100 && <p className="text-red-500 font-bold">You cannot add more than 100 characters!</p>}
 </label>
 <p className="text-red-500">{error}</p>
 
@@ -150,7 +157,8 @@ const removeSkill = (skillToRemove) => {
     </div>
   </div>
 </div>
-<Card user ={{ firstName , lastName , profilePic ,skills, bio, age, gender }}/>
+
+<Card className="max-h[50vh]" user ={{ firstName , lastName , profilePic ,skills, bio, age, gender }}/>
 </div>
 
 
