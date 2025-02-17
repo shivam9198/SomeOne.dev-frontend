@@ -1,3 +1,3 @@
-const baseUrl = "http://localhost:777"
+const baseUrl = "/api"
 
 export default baseUrl;
