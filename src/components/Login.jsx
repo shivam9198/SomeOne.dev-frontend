@@ -20,7 +20,7 @@ const [lastName, setlastName] = useState("");
 
 const handleSubmit = async()=>{
     try {
-    const res = await axios.post(baseUrl+'/login',{
+    const res = await axios.post(baseUrl+"/login",{
       email,password},
   {withCredentials:true},
 );
@@ -41,7 +41,7 @@ const handlesignup = async()=>{
  dispatch(addUser(res.data));
  navigate("/");
   } catch (error) {
-    console.log(error.response.data||"Something went wrong!");
+    seterrormessage(error.response.data||"Something went wrong!");
   }
 }
 
