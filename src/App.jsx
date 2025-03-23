@@ -8,6 +8,7 @@ import appStore from './utils/AppStore'
 import Feed from './components/Feed'
 import Connection from './components/Connection'
 import Request from './components/Request'
+import Premium from './components/Premium'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path ='/profile' element={<Profile/>}/>      {/*this route is the child route */}
       <Route path ='/request' element={<Request/>}/>      {/*this route is the child route */}
       <Route path ='/connections' element={<Connection/>}/>      {/*this route is the child route */}
+      <Route path ='/premium' element={<Premium/>}/>      {/*this route is the child route */}
       </Route>
     </Routes>
     </BrowserRouter>

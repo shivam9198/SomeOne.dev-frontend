@@ -21,11 +21,13 @@ function Connection() {
 
 useEffect(()=>{
     getConnections();
-},[])
+},[userConnections])
 if(!userConnections) return;
+if (userConnections.length === 0)
+    return <h1 className="font-bold text-3xl text-center my-10 pt-20"> No Connection Found</h1>;
   return (
-  <div className='w-full h-screen flex-col justify-items-center overflow-hidden pt-20 '>
-<h1 className='font-bold text-3xl text-center underline mb-8'> My Connections</h1>
+  <div className='w-full h-screen flex-col justify-items-center overflow-hidden pt-20 overflow-y-auto'>
+<h1 className='font-bold text-3xl text-center underline mb-8  '> My Connections</h1>
 
 {userConnections.map((connection)=>{
     const{firstName ,lastName, age, gender,bio, _id, profilePic }= connection

@@ -11,14 +11,14 @@ function Request() {
   const userRequest = async()=>{
 try {
   const res  = await axios.get(baseUrl +'/user/request/recived',{withCredentials : true});
-  dispatch((addRequest(res.data)));
+  dispatch(addRequest(res.data));
 } catch (error) {
   console.log(error);
 }
   }
-const reviewRequest = (state,_id)=>{
+const reviewRequest = async(state,_id)=>{
   try {
-    const res = axios.post(baseUrl + "/request/review/"+ state + "/" + _id , {},{withCredentials:true});
+    const res = await axios.post(baseUrl + "/request/review/"+ state + "/" + _id , {},{withCredentials:true});
      dispatch((removeRequest(_id)));
   } catch (error) {
     console.log(error);
@@ -38,6 +38,7 @@ const reviewRequest = (state,_id)=>{
     
     {requestRecived.map((request)=>{
         const{firstName ,lastName, age, gender,bio, _id, profilePic }= request.fromuserId;
+       
         return(
           <div key={_id} className='w-1/2 h-25 bg-base-300 m-5 rounded-2xl  flex items-center justify-between  mb-5 '>
               
